@@ -4,7 +4,7 @@ Twitter Author: @atogue
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
-It implements Redux essentials like Reducers and dispatch using createSlice to mutate state application using a single store.
+It implements Redux essentials like Reducers and dispatch using createSlice to mutate state application saved on a single store.
 These behaviors can be shown through some functionalities as save or remove a post message.
 
 ## Available Scripts
