@@ -12,7 +12,7 @@ const postsSlice = createSlice({
         postAdded(state, action) {
             state.push(action.payload)
         },
-        deletePost(state, action) {
+        postDeleted(state, action) {
             let index = null
             // eslint-disable-next-line
             state.filter(post => {
@@ -29,6 +29,6 @@ const postsSlice = createSlice({
     }
 })
 
-export const { postAdded, deletePost } = postsSlice.actions
+export const { postAdded, postDeleted } = postsSlice.actions
 
 export default postsSlice.reducer

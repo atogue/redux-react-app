@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { useSelector, useDispatch } from 'react-redux'
-import { deletePost } from './postsSlice'
+import { postDeleted } from './postsSlice'
 import { Link}  from 'react-router-dom'
 
 export const PostsList = () => {
@@ -12,7 +12,7 @@ export const PostsList = () => {
         e.preventDefault()
         if (id) {
             dispatch(
-                deletePost({
+                postDeleted({
                     id: id
                 })
             )
@@ -23,7 +23,7 @@ export const PostsList = () => {
         <article className="post-excerpt" key={post.id}>
             <h3>{post.title}</h3>
             <p className="post-content">{post.content.substring(0, 100)}</p>
-            <button className="delete-post"
+            <button className="post-deleted"
                 type="button"
                 onClick={(e) => onDeletePostClicked(e, post.id)}>delete post</button>
             <Link to={`/posts/${post.id}`} className="button muted-button">View Post</Link>
