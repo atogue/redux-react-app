@@ -14,6 +14,7 @@ const postsSlice = createSlice({
         },
         deletePost(state, action) {
             let index = null
+            // eslint-disable-next-line
             state.filter(post => {
                 if (post.id === action.payload.id) {
                     index = state.indexOf(post)
