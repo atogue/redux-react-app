@@ -1,11 +1,13 @@
 # Redux Essentials Learning
-Twitter Author: @atogue
+Author - Twitter: @atogue
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 It implements Redux essentials like Reducers and dispatch using createSlice to mutate state application saved on a single store.
 These behaviors can be shown through some functionalities as save or remove a post message.
+
+### Note: node version 12.x.x is required
 
 ## Available Scripts
 
