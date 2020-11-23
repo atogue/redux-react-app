@@ -36,10 +36,18 @@ const postsSlice = createSlice({
                // console.log('post found with index (' + index + ') and deleted from state!')
                 state.splice(index, 1)
             }
+        },
+        postUpdated(state, action) {
+            const { id, title, content } = action.payload
+            const existingPost = state.find(post => post.id === id)
+            if (existingPost) {
+                existingPost.title = title
+                existingPost.content = content
+            }
         }
     }
 })
 
-export const { postAdded, postDeleted } = postsSlice.actions
+export const { postAdded, postDeleted, postUpdated } = postsSlice.actions
 
 export default postsSlice.reducer
