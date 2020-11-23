@@ -2,6 +2,7 @@ import React from 'react'
 
 import { useSelector, useDispatch } from 'react-redux'
 import { deletePost } from './postsSlice'
+import { Link}  from 'react-router-dom'
 
 export const PostsList = () => {
     const posts = useSelector(state => state.posts)
@@ -25,6 +26,7 @@ export const PostsList = () => {
             <button className="delete-post"
                 type="button"
                 onClick={(e) => onDeletePostClicked(e, post.id)}>delete post</button>
+            <Link to={`/posts/${post.id}`} className="button muted-button">View Post</Link>
         </article>
     ))
 
