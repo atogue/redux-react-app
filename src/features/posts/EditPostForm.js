@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 
 import { postUpdated } from './postsSlice'
+import {PostAuthor} from "./PostAuthor";
 
 export const EditPostForm = ({ match }) => {
     const { postId } = match.params
@@ -27,6 +28,8 @@ export const EditPostForm = ({ match }) => {
     return (
         <section>
             <h2>Edit Post</h2>
+            <PostAuthor userId={post.user} />
+
             <form>
                 <label htmlFor="postTitle">Post Title:</label>
                 <input

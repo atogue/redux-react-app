@@ -3,6 +3,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { postDeleted } from './postsSlice'
 import { Link}  from 'react-router-dom'
+import {PostAuthor} from "./PostAuthor";
 
 export const PostsList = () => {
     const posts = useSelector(state => state.posts)
@@ -26,7 +27,10 @@ export const PostsList = () => {
             <button className="post-deleted"
                 type="button"
                 onClick={(e) => onDeletePostClicked(e, post.id)}>delete post</button>
+
             <Link to={`/posts/${post.id}`} className="button muted-button">View Post</Link>
+
+            <PostAuthor userId={post.user} />
         </article>
     ))
 
