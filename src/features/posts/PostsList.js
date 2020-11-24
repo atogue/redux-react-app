@@ -2,9 +2,10 @@ import React from 'react'
 
 import { useSelector, useDispatch } from 'react-redux'
 import { postDeleted } from './postsSlice'
-import { Link}  from 'react-router-dom'
-import {PostAuthor} from "./PostAuthor";
-import {TimeAgo} from "./TimeAgo";
+import { Link }  from 'react-router-dom'
+import { PostAuthor } from './PostAuthor'
+import { TimeAgo } from './TimeAgo'
+import { ReactionButtons } from './ReactionButtons'
 
 export const PostsList = () => {
     const posts = useSelector(state => state.posts)
@@ -28,6 +29,7 @@ export const PostsList = () => {
             <h3>{post.title}</h3>
             <TimeAgo timestamp={post.date} />
             <p className="post-content">{post.content.substring(0, 100)}</p>
+            <ReactionButtons post={post} />
             <button className="post-deleted"
                 type="button"
                 onClick={(e) => onDeletePostClicked(e, post.id)}>delete post</button>
