@@ -7,6 +7,6 @@ export const PostAuthor = ({ userId }) => {
     )
 
     return (
-        <span className="post-author">by {author ? author.name : 'Unknown author'}</span>
+        <span>by {author ? author.name : 'Unknown author'}</span>
     )
 }
