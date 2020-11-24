@@ -150,6 +150,16 @@ p.post-content {
   margin-right: 1rem;
 }
 
+.post-author {
+  display: inline-block;
+  background: grey;
+  color: white;
+  border-radius: 5px;
+  font-weight: 500;
+  padding: 0.45rem 1.5rem;
+  margin-left: 17rem;
+}
+
 button:disabled,
 button:disabled:hover {
   opacity: 0.5;
