@@ -7,7 +7,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 It implements Redux essentials like Reducers and dispatch using createSlice to mutate state application saved on a single store.
 These behaviors can be shown through some functionalities as save or remove a post message.
 
-### Note: node version 12.x.x is required
+### Note: node version 12.18.4 or higher is required
 
 ## Available Scripts
 
