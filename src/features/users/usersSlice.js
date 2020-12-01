@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { client } from '../../api/client'
 
+// warning: this initial users doesn't match to server post object - add new post with them will fail!
 const initialState = [
     {id: '0', name: 'Anicet Togue'},
     {id: '1', name: 'Monica Belluccia'},
@@ -19,7 +20,7 @@ const usersSlice = createSlice({
     extraReducers: {
         [fetchUsers.fulfilled]: (state, action) => {
             // action.payload is the inMemory users
-            return initialState.concat(action.payload)
+            return action.payload ? action.payload.concat(initialState) : initialState
         }
     }
 })
