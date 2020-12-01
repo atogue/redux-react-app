@@ -65,7 +65,8 @@ const notificationTemplates = [
 new Server({
   routes() {
     this.namespace = 'fakeApi'
-    //this.timing = 2000
+    // delay time before sending back the response - feel free to comment
+    this.timing = 2000
 
     this.resource('users')
     this.resource('posts')
