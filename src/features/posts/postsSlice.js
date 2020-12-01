@@ -1,11 +1,16 @@
-import { createSlice, nanoid } from '@reduxjs/toolkit'
-import { sub } from 'date-fns'
+import { createSlice, nanoid, createAsyncThunk } from '@reduxjs/toolkit'
+import { client } from '../../api/client'
 
 const initialState = {
     posts: [],
     status: 'idle',
     error: null
 }
+
+export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
+    const response = await client.get('/fakeApi/posts')
+    return response.posts
+})
 
 const postsSlice = createSlice({
     name: 'posts',
@@ -56,6 +61,20 @@ const postsSlice = createSlice({
                 existingPost.title = title
                 existingPost.content = content
             }
+        }
+    },
+    extraReducers: {
+        [fetchPosts.pending]: (state, action) => {
+            state.status = 'loading'
+        },
+        [fetchPosts.fulfilled]: (state, action) => {
+            state.status = 'succeeded'
+            //add any fetched posts to the array
+            state.posts = state.posts.concat(action.payload)
+        },
+        [fetchPosts.rejected]: (state, action) => {
+            state.status = 'failed'
+            state.error = action.error.message
         }
     }
 })
