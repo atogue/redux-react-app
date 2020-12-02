@@ -73,6 +73,9 @@ nav a:hover {
   position: relative;
   top: -3px;
 }
+.navbar-title {
+  text-align: center;
+}
 
 .badge {
   display: inline-block;
@@ -116,6 +119,16 @@ section h1 {
   padding: 0.25rem 0.25rem;
   border: 1px solid rgb(177, 174, 174);
   border-radius: 7px;
+}
+
+.notification {
+  padding: 0.30rem 0.50rem;
+  border: 2px solid rgb(177, 174, 174);
+  border-radius: 7px;
+}
+
+.copyright {
+  margin-top: 25px;
 }
 
 .posts-list .post-excerpt + .post-excerpt {
