@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { PostAuthor } from './PostAuthor'
 import { TimeAgo } from './TimeAgo'
 import { ReactionButtons } from './ReactionButtons'
@@ -5,7 +7,7 @@ import { Link } from 'react-router-dom'
 import { postDeleted } from './postsSlice'
 import { useDispatch } from 'react-redux'
 
-export const PostExcerpt = ({post}) => {
+let SinglePostExcerpt = ({ post }) => {
     const dispatch = useDispatch()
 
     const onDeletePostClicked = (e, id) => {
@@ -35,3 +37,5 @@ export const PostExcerpt = ({post}) => {
         </article>
     )
 }
+
+export const PostExcerpt = React.memo(SinglePostExcerpt)
