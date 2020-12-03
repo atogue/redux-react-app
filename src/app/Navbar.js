@@ -10,20 +10,22 @@ export const Navbar = () => {
         dispatch(fetchNotifications())
     }
   return (
-    <nav>
-      <section>
-        <h1 className="navbar-title">Redux Essentials Learning</h1>
+    <div>
+        <nav>
+          <section>
+            <h1>Redux Essentials Learning</h1>
 
-        <div className="navContent">
-          <div className="navLinks">
-              <Link to="/">Posts</Link>
-              <Link to="/users">Users</Link>
-              <Link to="/notifications">Notifications</Link>
-          </div>
-          <button className="button" onClick={fetchNewNotifications}>Refresh Notifications</button>
-          <i className="copyright">@cratfchain</i>
-        </div>
-      </section>
-    </nav>
+            <div className="navContent">
+              <div className="navLinks">
+                  <Link to="/">Posts</Link>
+                  <Link to="/users">Users</Link>
+                  <Link to="/notifications">Notifications</Link>
+              </div>
+              <button className="button" onClick={fetchNewNotifications}>Refresh Notifications</button>
+            </div>
+          </section>
+        </nav>
+        <span><i className="copyright">@cratfchain</i></span>
+    </div>
   )
 }
