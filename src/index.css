@@ -121,14 +121,22 @@ section h1 {
   border-radius: 7px;
 }
 
-.notification {
+.post-notification {
   padding: 0.30rem 0.50rem;
   border: 2px solid rgb(177, 174, 174);
   border-radius: 7px;
 }
+.post-notification-new {
+  padding: 0.30rem 0.50rem;
+  border: 2px solid rgb(177, 174, 174);
+  border-radius: 7px;
+  background-color: #29d777;
+}
 
 .copyright {
   margin-top: 25px;
+  font-size: small;
+  color: black;
 }
 
 .posts-list .post-excerpt + .post-excerpt {
