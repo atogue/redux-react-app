@@ -15,15 +15,27 @@ export const fetchNotifications = createAsyncThunk(
 const notificationsSlice = createSlice({
     name: 'notifications',
     initialState: [],
-    reducers: {},
+    reducers: {
+        allNotificationsRead(state, action) {
+            state.forEach(notification => {
+                notification.read = true
+            })
+        }
+    },
     extraReducers: {
         [fetchNotifications.fulfilled]: (state, action) => {
+            state.forEach(notification => {
+                // any notifications readed are no longer new
+                notification.isNew = !notification.read
+            })
             state.push(...action.payload)
             // sort with newest first
             state.sort((a, b) => b.date.localeCompare(b.date))
         }
     }
 })
+
+export const { allNotificationsRead } = notificationsSlice.actions
 
 export default notificationsSlice.reducer
 
