@@ -25,6 +25,7 @@ const usersSlice = createSlice({
                     user.name = 'Monica Belluccia'
                 if (user.firstName === 'Darren')
                     user.name = 'Sharon Stonesa'
+                return user
             })
             usersAdapter.setAll(state, action.payload)
         }
