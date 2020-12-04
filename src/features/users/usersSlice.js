@@ -17,6 +17,15 @@ const usersSlice = createSlice({
     extraReducers: {
         [fetchUsers.fulfilled]: (state, action) => {
             // use of adapter api : action.payload is the inMemory users
+            // rename user name for personnal usage - should be useless
+            action.payload.map(user => {
+                if (user.firstName === 'Cody')
+                    user.name = 'Anicet Togue'
+                if (user.firstName === 'Mathias')
+                    user.name = 'Monica Belluccia'
+                if (user.firstName === 'Darren')
+                    user.name = 'Sharon Stonesa'
+            })
             usersAdapter.setAll(state, action.payload)
         }
     }
