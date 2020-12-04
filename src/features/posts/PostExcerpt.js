@@ -5,10 +5,13 @@ import { TimeAgo } from './TimeAgo'
 import { ReactionButtons } from './ReactionButtons'
 import { Link } from 'react-router-dom'
 import { postDeleted } from './postsSlice'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
-let SinglePostExcerpt = ({ post }) => {
+import { selectPostById } from './postsSlice'
+
+let SinglePostExcerpt = ({ postId }) => {
     const dispatch = useDispatch()
+    const post = useSelector(state => selectPostById(state, postId))
 
     const onDeletePostClicked = (e, id) => {
         e.preventDefault()
